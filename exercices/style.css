@@ -1,0 +1,99 @@
+/* Définition des couleurs principales pour faciliter les changements */
+:root {
+  --couleur-texte: #333333;
+  --couleur-titre: #2c3e50;
+  --couleur-lien: #3498db;
+  --couleur-fond: #f4f7f6;
+  --couleur-carte: #ffffff;
+}
+
+/* Style général de la page */
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+/* On transforme tes <section> en jolies cartes blanches centrées */
+section {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  background-color: var(--couleur-carte);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Typographie des titres */
+h1, h2, h3 {
+  color: var(--couleur-titre);
+  margin-top: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--couleur-lien);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+/* Style des liens */
+a {
+  color: var(--couleur-lien);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Gestion des images pour qu'elles s'adaptent à l'écran (Responsive) */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Style spécifique pour ton avatar (on le rend rond et plus petit) */
+img[alt="Mon avatar"] {
+  max-width: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+/* Rendre tes séparateurs <hr> plus discrets et élégants */
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  margin: 10px 0;
+}
+
+/* Style des listes */
+ul, ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Mettre en valeur les dates/textes en gras dans le CV */
+strong {
+  color: var(--couleur-titre);
+}
