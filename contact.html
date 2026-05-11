@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerveau Actif | S'abonner & Contact</title>
+    <!-- Le lien vers ton futur fichier CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cerveau Actif</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="bienfaits.html">Les Bienfaits</a></li>
+                <li><a href="exercices.html">Les Jeux</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <h2>Rejoignez la communauté des cerveaux musclés</h2>
+        <p>Inscrivez-vous pour recevoir votre défi quotidien ou partagez avec nous vos meilleures astuces de calcul !</p>
+        
+        <div class="form-box">
+            <form action="#" method="post">
+                
+                <div class="form-group">
+                    <label for="prenom">Votre prénom :</label><br>
+                    <input type="text" id="prenom" name="prenom" placeholder="Ex: Marie" required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="email">Votre adresse email :</label><br>
+                    <input type="email" id="email" name="email" placeholder="marie@exemple.com" required>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="niveau">Votre niveau actuel en calcul :</label><br>
+                    <select id="niveau" name="niveau">
+                        <option value="debutant">Je compte sur mes doigts 🖐️</option>
+                        <option value="intermediaire">Je me débrouille sans calculatrice 🛒</option>
+                        <option value="expert">Je suis une machine 🤖</option>
+                    </select>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="astuce">Partagez une astuce ou une idée de jeu (optionnel) :</label><br>
+                    <textarea id="astuce" name="astuce" rows="4" placeholder="Votre message ici..."></textarea>
+                </div>
+                <br>
+
+                <input type="submit" value="Envoyer ma candidature mentale">
+            </form>
+        </div>
+    </main>
+
+    <hr>
+    <footer>
+        <p>&copy; 2026 Cerveau Actif - Tes neurones te remercient.</p>
+    </footer>
+</body>
+</html>
