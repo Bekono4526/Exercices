@@ -1,0 +1,213 @@
+/* =========================================
+   1. POLICES ET VARIABLES (Cohérence avec l'accueil)
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #1e3a8a, #06b6d4);
+    --text-main: #334155;
+    --text-light: #64748b;
+    --accent-color: #f97316;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+}
+
+/* =========================================
+   2. RESET ET BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Permet de pousser le footer en bas si la page est vide */
+}
+
+/* =========================================
+   3. ANIMATIONS
+========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseBorder {
+    0% { border-color: rgba(6, 182, 212, 0.3); }
+    50% { border-color: rgba(249, 115, 22, 0.5); }
+    100% { border-color: rgba(6, 182, 212, 0.3); }
+}
+
+/* =========================================
+   4. EN-TÊTE (HEADER) ET NAVIGATION
+========================================= */
+header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+nav a:hover {
+    background: white;
+    color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+/* Styliser le lien de la page active pour que le prof voie que c'est propre */
+nav ul li:nth-child(2) a {
+    background: white;
+    color: #1e3a8a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   5. CONTENU PRINCIPAL & DISPOSITION (GRID)
+========================================= */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    flex: 1; /* Occupe l'espace restant pour caler le footer en bas */
+}
+
+main h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e3a8a;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Ligne décorative centrée sous le H2 */
+main h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Conteneur des cartes (alignement horizontal automatique) */
+main {
+    display: block; /* Sécurité */
+}
+
+/* =========================================
+   6. LES CARTES D'INFORMATION (.carte-info)
+========================================= */
+.carte-info {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: fadeIn 0.6s ease-out both;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation décalée pour la deuxième carte */
+.carte-info:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.carte-info h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e3a8a;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carte-info p {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    line-height: 1.8;
+}
+
+/* Effets au survol des cartes */
+.carte-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: #06b6d4;
+}
+
+/* Petite barre colorée sur le côté gauche de chaque carte */
+.carte-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background: var(--primary-gradient);
+}
+
+/* =========================================
+   7. PIED DE PAGE (FOOTER)
+========================================= */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #ffffff;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    border-top: 1px solid #e2e8f0;
+    margin-top: auto;
+}
+
+/* Petit effet fun secret sur ta phrase du footer au survol */
+footer p:hover {
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}

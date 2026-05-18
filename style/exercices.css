@@ -1,0 +1,273 @@
+/* =========================================
+   1. POLICES ET VARIABLES (Cohérence totale)
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #1e3a8a, #06b6d4);
+    --text-main: #334155;
+    --text-light: #64748b;
+    --accent-color: #f97316;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    
+    /* Couleurs spécifiques au quiz */
+    --error-bg: #fef2f2;
+    --error-text: #991b1b;
+    --error-border: #fca5a5;
+    
+    --success-bg: #f0fdf4;
+    --success-text: #166534;
+    --success-border: #86efac;
+}
+
+/* =========================================
+   2. RESET ET BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+hr {
+    display: none;
+}
+
+/* =========================================
+   3. ANIMATIONS
+========================================= */
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation pour la mauvaise réponse */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Animation pour la bonne réponse */
+@keyframes popIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* =========================================
+   4. EN-TÊTE ET NAVIGATION (Identique)
+========================================= */
+header {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+nav a:hover {
+    background: white;
+    color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+/* Bouton actif pour "Les Jeux" */
+nav ul li:nth-child(3) a {
+    background: white;
+    color: #1e3a8a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   5. CONTENU PRINCIPAL
+========================================= */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    flex: 1;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e3a8a;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+main > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+/* =========================================
+   6. LES BOÎTES DE QUIZ (.quiz-box)
+========================================= */
+.quiz-box {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--accent-color);
+    animation: slideUpFade 0.6s ease-out backwards;
+}
+
+/* Apparition en cascade */
+.quiz-box:nth-of-type(1) { animation-delay: 0.1s; }
+.quiz-box:nth-of-type(2) { animation-delay: 0.3s; }
+.quiz-box:nth-of-type(3) { animation-delay: 0.5s; }
+
+.quiz-box h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #06b6d4;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.quiz-box > p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+/* =========================================
+   7. STYLISATION DES DETAILS & SUMMARY
+========================================= */
+details {
+    margin-bottom: 0.8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden; /* Empêche le contenu de déborder de la bordure arrondie */
+    transition: all 0.3s ease;
+}
+
+/* Cacher la petite flèche noire par défaut du navigateur */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+summary {
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    list-style: none; /* Cacher la flèche sur d'autres navigateurs */
+    position: relative;
+    transition: background 0.2s ease;
+}
+
+summary:hover {
+    background: #e2e8f0;
+}
+
+/* Création d'une icône "+" personnalisée */
+summary::after {
+    content: '+';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--text-light);
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+/* Quand l'élément est ouvert, le contour change et le "+" devient "-" */
+details[open] {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg); /* Fait tourner le + pour en faire une croix */
+    color: var(--text-main);
+}
+
+/* =========================================
+   8. RÉPONSES (SUCCÈS / ERREUR)
+========================================= */
+/* Style commun aux réponses */
+details p {
+    padding: 1.2rem 1.5rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* La mauvaise réponse */
+.erreur {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border-top: 1px solid var(--error-border);
+    animation: shake 0.4s ease-in-out;
+}
+
+/* La bonne réponse */
+.succes {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border-top: 1px solid var(--success-border);
+    animation: popIn 0.4s ease-out;
+}
+
+/* =========================================
+   9. PIED DE PAGE (FOOTER)
+========================================= */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #ffffff;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    border-top: 1px solid #e2e8f0;
+    margin-top: auto;
+}

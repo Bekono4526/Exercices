@@ -3,33 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerveau Actif | Gymnastique Mentale</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    
+    <title>Cerveau Actif | Gymnastique Mentale et Santé Cognitive</title>
+    <meta name="description" content="Découvrez notre programme de gymnastique mentale. Entraînez votre mémoire et votre concentration avec nos exercices interactifs de calcul mental.">
+    <meta name="author" content="Ton Prénom Ton Nom">
+    
+    <meta property="og:title" content="Cerveau Actif | Gymnastique Mentale">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="5 minutes par jour pour stimuler votre cerveau et ralentir le vieillissement cellulaire.">
+    
+    <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
+
+    <!-- =========================================
+         ÉCRAN DE CHARGEMENT (SPLASH SCREEN)
+         À placer ici, en tout premier dans le body !
+    ========================================= -->
+    <div id="splash-screen">
+        <div class="loader">
+            <div class="box box-1">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-2">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-3">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-4">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+        </div>
+        <p class="loader-text">Échauffement des neurones...</p>
+    </div>
+    <!-- FIN DE L'ÉCRAN DE CHARGEMENT -->
+
+    <!-- Lien d'évitement pour l'accessibilité -->
+    <a href="#contenu-principal" class="sr-only" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">Aller au contenu principal</a>
+
     <header>
         <h1>Cerveau Actif</h1>
         <p><em>Parce que votre esprit mérite autant d'attention que votre corps.</em></p>
-        <nav>
+        
+        <nav aria-label="Navigation principale">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
                 <li><a href="bienfaits.html">Les Bienfaits</a></li>
                 <li><a href="exercices.html">Exercices Interactifs</a></li>
                 <li><a href="contact.html">S'abonner</a></li>
             </ul>
         </nav>
-        <hr>
     </header>
 
-    <main>
-        <section>
+    <main id="contenu-principal">
+        <article>
             <h2>Prenez soin de votre capital santé</h2>
             
             <blockquote cite="https://fr.wikipedia.org/wiki/Neuroplasticit%C3%A9">
-                "Le cerveau n'est pas figé. La neuroplasticité permet à notre cerveau de se remodeler tout au long de la vie grâce à l'apprentissage et à la stimulation."
+                <p>"Le cerveau n'est pas figé. La neuroplasticité permet à notre cerveau de se remodeler tout au long de la vie grâce à l'apprentissage et à la stimulation."</p>
             </blockquote>
 
-            <p>Le calcul mental n'est pas qu'une affaire de mathématiques. C'est un <strong>bouclier cognitif</strong>. Des études démontrent qu'une pratique de <em>5 minutes par jour</em> suffit à :</p>
+            <p>Le calcul mental n'est pas qu'une affaire de mathématiques. C'est un <strong>bouclier cognitif</strong>. Des études démontrent qu'une pratique de <time datetime="PT5M">5 minutes</time> par jour suffit à :</p>
+            
             <ul>
                 <li>Stimuler la mémoire à court terme.</li>
                 <li>Renforcer la concentration.</li>
@@ -38,14 +82,63 @@
 
             <p>Découvrez notre programme doux, sans pression, pour garder un esprit agile à tout âge.</p>
             
-            <!-- on doit trouver une belle image pour illustrer ça -->
-            <img src="" alt="Une personne âgée souriante qui lit un livre" width="100%">
+            <!-- Le Call to Action (CTA) -->
+            <a href="exercices.html" class="btn-cta">Commencer l'entraînement 🚀</a>
+            
+            <figure>
+                <img src="images/newim.png" alt="Une personne âgée souriante assise dans un fauteuil lisant un livre avec concentration" loading="lazy">
+                <figcaption style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 0.5rem; font-style: italic;">La stimulation mentale au quotidien préserve l'agilité cognitive.</figcaption>
+            </figure>
+        </article>
+
+        <!-- ... fin de ton <article> précédent ... -->
+
+        <!-- NOUVELLE SECTION : AVIS DES MEMBRES -->
+        <section class="temoignages-section">
+            <h3 class="section-titre">Ce qu'en disent nos membres</h3>
+            
+            <div class="cards-container">
+                <!-- Carte Avis 1 -->
+                <div class="card">
+                    <div class="body">
+                        <p class="text">Depuis que je fais ces petits jeux 5 minutes le matin, je retiens beaucoup plus facilement ma liste de courses. Programme au top !</p>
+                        <span class="username">@Yaya12085</span>
+                        <div class="footer">
+                            <div>
+                                <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"></path></svg>18</div>
+                                <div><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z" stroke-width="2"></path><path d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z" stroke-width="2"></path><path d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z" stroke-width="2"></path><path d="M8.7207 10.6397L15.0001 7.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.70605 13.353L15 16.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>2</div>
+                            </div>
+                            <div class="viewer">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-width="2" stroke="#ffffff" d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"></path><path stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"></path></svg></span>
+                                <span>+20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Avis 2 (Exemple supplémentaire) -->
+                <div class="card">
+                    <div class="body">
+                        <p class="text">Une interface super claire et des exercices qui font vraiment réfléchir sans être frustrants. Je recommande à 100% !</p>
+                        <span class="username">@Marc_Dev</span>
+                        <div class="footer">
+                            <div>
+                                <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"></path></svg>45</div>
+                                <div><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 6C21 7.65685 19.6569 9 18 9C16.3431 9 15 7.65685 15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6Z" stroke-width="2"></path><path d="M21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18Z" stroke-width="2"></path><path d="M9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z" stroke-width="2"></path><path d="M8.7207 10.6397L15.0001 7.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.70605 13.353L15 16.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>12</div>
+                            </div>
+                            <div class="viewer">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-width="2" stroke="#ffffff" d="M17 8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8Z"></path><path stroke-linecap="round" stroke-width="2" stroke="#ffffff" d="M3 21C3.95728 17.9237 6.41998 17 12 17C17.58 17 20.0427 17.9237 21 21"></path></svg></span>
+                                <span>+54</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <hr>
     <footer>
-        <p>&copy; 2026 Cerveau Actif - Maintenez votre esprit en forme.</p>
+        <p>&copy; <time datetime="2026">2026</time> Cerveau Actif - Maintenez votre esprit en forme.</p>
     </footer>
 </body>
 </html>
