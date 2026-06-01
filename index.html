@@ -5,21 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Cerveau Actif | Gymnastique Mentale et Santé Cognitive</title>
-    <meta name="description" content="Découvrez notre programme de gymnastique mentale. Entraînez votre mémoire et votre concentration avec nos exercices interactifs de calcul mental.">
+    <meta name="description" content="Découvrez notre programme de gymnastique mentale et notre boutique de jeux cognitifs. Entraînez votre mémoire avec nos exercices et nos produits écoresponsables.">
     <meta name="author" content="Ton Prénom Ton Nom">
     
-    <meta property="og:title" content="Cerveau Actif | Gymnastique Mentale">
+    <meta property="og:title" content="Cerveau Actif | Gymnastique Mentale & Boutique">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="5 minutes par jour pour stimuler votre cerveau et ralentir le vieillissement cellulaire.">
+    <meta property="og:description" content="Stimulez votre cerveau au quotidien avec nos exercices en ligne et nos jeux de mémoire en bois.">
     
     <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
 
-    <!-- =========================================
-         ÉCRAN DE CHARGEMENT (SPLASH SCREEN)
-         À placer ici, en tout premier dans le body !
-    ========================================= -->
     <div id="splash-screen">
         <div class="loader">
             <div class="box box-1">
@@ -45,9 +41,6 @@
         </div>
         <p class="loader-text">Échauffement des neurones...</p>
     </div>
-    <!-- FIN DE L'ÉCRAN DE CHARGEMENT -->
-
-    <!-- Lien d'évitement pour l'accessibilité -->
     <a href="#contenu-principal" class="sr-only" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">Aller au contenu principal</a>
 
     <header>
@@ -59,12 +52,14 @@
                 <li><a href="index.html" aria-current="page">Accueil</a></li>
                 <li><a href="bienfaits.html">Les Bienfaits</a></li>
                 <li><a href="exercices.html">Exercices Interactifs</a></li>
+                <li><a href="boutique.html">La Boutique</a></li>
                 <li><a href="contact.html">S'abonner</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="contenu-principal">
+        
         <article>
             <h2>Prenez soin de votre capital santé</h2>
             
@@ -72,7 +67,7 @@
                 <p>"Le cerveau n'est pas figé. La neuroplasticité permet à notre cerveau de se remodeler tout au long de la vie grâce à l'apprentissage et à la stimulation."</p>
             </blockquote>
 
-            <p>Le calcul mental n'est pas qu'une affaire de mathématiques. C'est un <strong>bouclier cognitif</strong>. Des études démontrent qu'une pratique de <time datetime="PT5M">5 minutes</time> par jour suffit à :</p>
+            <p>Le calcul mental et la gymnastique cognitive ne sont pas qu'une affaire de logique. C'est un <strong>bouclier cognitif</strong>. Des études démontrent qu'une pratique de <time datetime="PT5M">5 minutes</time> par jour suffit à</p>
             
             <ul>
                 <li>Stimuler la mémoire à court terme.</li>
@@ -80,10 +75,12 @@
                 <li>Ralentir le vieillissement cellulaire.</li>
             </ul>
 
-            <p>Découvrez notre programme doux, sans pression, pour garder un esprit agile à tout âge.</p>
+            <p>Découvrez notre programme doux en ligne, ou prolongez l'expérience chez vous avec nos outils traditionnels.</p>
             
-            <!-- Le Call to Action (CTA) -->
-            <a href="exercices.html" class="btn-cta">Commencer l'entraînement 🚀</a>
+            <div class="cta-group" ">
+                <a href="exercices.html" class="btn-cta">Commencer l'entraînement 🚀</a>
+                <a href="boutique.html" class="btn-cta btn-secondary" style="background-color: #64748b;">Visiter la Boutique 🛒</a>
+            </div>
             
             <figure>
                 <img src="images/newim.png" alt="Une personne âgée souriante assise dans un fauteuil lisant un livre avec concentration" loading="lazy">
@@ -91,14 +88,55 @@
             </figure>
         </article>
 
-        <!-- ... fin de ton <article> précédent ... -->
+        <section class="boutique-preview-section">
+            <h3 class="section-titre">Nos coups de cœur de la Boutique</h3>
+            <p style="text-align: center; color: #64748b; margin-bottom: 2rem;">Des outils physiques et écoresponsables pour s'entraîner loin des écrans.</p>
+            
+            <div class="products-container">
+                
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="images/jeu-bois.png" alt="Jeu de mémoire traditionnel en bois de hêtre avec des pions colorés" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h4>Mémo-Bois Tradition</h4>
+                        <p>Un jeu de paires classique revisité en bois local pour stimuler la mémoire visuelle et la concentration en famille.</p>
+                        <span class="product-price">24,90 €</span>
+                        <a href="boutique.html" class="btn-product">Voir le produit</a>
+                    </div>
+                </article>
 
-        <!-- NOUVELLE SECTION : AVIS DES MEMBRES -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="images/casse-tete.png" alt="Un casse-tête cubique complexe en bambou naturel" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h4>Le Cube Synaptique</h4>
+                        <p>Casse-tête en bambou de niveau 4/5. Idéal pour faire travailler la patience, la logique et la vision dans l'espace.</p>
+                        <span class="product-price">14,95 €</span>
+                        <a href="boutique.html" class="btn-product">Voir le produit</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="images/cahier-exercices.png" alt="Couverture du cahier d'agilité mentale avec des motifs géométriques" loading="lazy">
+                    </div>
+                    <div class="product-body">
+                        <h4>Cahier d'Agilité Mentale</h4>
+                        <p>100 pages d'énigmes, de suites logiques et de sudokus conçus par des spécialistes pour un rituel matinal stimulant.</p>
+                        <span class="product-price">9,90 €</span>
+                        <a href="boutique.html" class="btn-product">Voir le produit</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
         <section class="temoignages-section">
             <h3 class="section-titre">Ce qu'en disent nos membres</h3>
             
             <div class="cards-container">
-                <!-- Carte Avis 1 -->
                 <div class="card">
                     <div class="body">
                         <p class="text">Depuis que je fais ces petits jeux 5 minutes le matin, je retiens beaucoup plus facilement ma liste de courses. Programme au top !</p>
@@ -116,7 +154,6 @@
                     </div>
                 </div>
 
-                <!-- Carte Avis 2 (Exemple supplémentaire) -->
                 <div class="card">
                     <div class="body">
                         <p class="text">Une interface super claire et des exercices qui font vraiment réfléchir sans être frustrants. Je recommande à 100% !</p>

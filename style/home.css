@@ -34,7 +34,6 @@ hr {
     display: none;
 }
 
-/* La classe sr-only est utilisée dans ton HTML pro pour cacher le lien sans le rendre invisible aux lecteurs d'écran */
 .sr-only:not(:focus) {
     clip: rect(0, 0, 0, 0);
     clip-path: inset(50%);
@@ -70,26 +69,26 @@ hr {
 header {
     background: var(--primary-gradient);
     color: white;
-    padding: 4rem 2rem 3rem;
+    padding: 2rem; /* Plus fin */
     text-align: center;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
-    animation: slideDown 0.8s ease-out forwards;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
+    /* On garde l'animation d'apparition spéciale pour la page d'accueil ! */
+    animation: slideDown 0.8s ease-out forwards; 
 }
 
 header h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 3.5rem;
-    letter-spacing: -1px;
+    font-size: 2.2rem; /* Titre plus élégant */
     margin-bottom: 0.5rem;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.9;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 300;
 }
 
@@ -97,7 +96,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -106,23 +105,21 @@ nav a {
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 1.1rem;
-    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 50px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 nav a:hover {
     background: white;
     color: #1e3a8a;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
-/* Marquer le bouton d'accueil comme actif */
 nav a[aria-current="page"] {
     background: white;
     color: #1e3a8a;
@@ -134,15 +131,14 @@ nav a[aria-current="page"] {
 ========================================= */
 main {
     max-width: 900px;
-    margin: -2rem auto 3rem; /* Remonte légèrement sur le header */
+    margin: -2rem auto 3rem;
     padding: 0 1.5rem;
     position: relative;
     z-index: 10;
     animation: slideUp 1s ease-out 0.3s forwards;
-    opacity: 0; /* Caché avant l'animation */
+    opacity: 0;
 }
 
-/* Remplacement de 'section' par 'article' ici */
 article {
     background: var(--card-bg);
     padding: 3rem;
@@ -150,7 +146,7 @@ article {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
-h2 {
+h2, .section-titre {
     font-family: 'Poppins', sans-serif;
     color: #1e3a8a;
     font-size: 2.2rem;
@@ -159,7 +155,7 @@ h2 {
     display: inline-block;
 }
 
-h2::after {
+h2::after, .section-titre::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -168,6 +164,16 @@ h2::after {
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 2px;
+}
+
+.section-titre {
+    display: block;
+    text-align: center;
+}
+
+.section-titre::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* =========================================
@@ -200,7 +206,6 @@ blockquote {
     position: relative;
 }
 
-/* Retire la marge en bas du paragraphe dans la citation pour un alignement propre */
 blockquote p {
     margin-bottom: 0;
 }
@@ -224,7 +229,6 @@ ul {
     padding-left: 1rem;
 }
 
-/* Remplacement de 'section' par 'article' ici aussi */
 article ul li {
     font-size: 1.1rem;
     margin-bottom: 1rem;
@@ -246,42 +250,11 @@ article ul li::before {
 article ul li:nth-child(2)::before { animation-delay: 0.5s; }
 article ul li:nth-child(3)::before { animation-delay: 1s; }
 
-
 /* =========================================
-   10. BOUTON CALL TO ACTION (CTA)
-========================================= */
-.btn-cta {
-    display: inline-block;
-    background: var(--accent-color); /* On utilise l'orange pour qu'il ressorte bien */
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    margin: 1rem 0 2.5rem 0; /* Espace autour du bouton */
-    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.btn-cta:hover {
-    transform: translateY(-4px);
-    background: #ea580c; /* Orange un peu plus foncé au survol */
-    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
-    color: white; /* Sécurité pour garder le texte blanc */
-}
-
-.btn-cta:active {
-    transform: translateY(1px);
-    box-shadow: 0 5px 10px rgba(249, 115, 22, 0.3);
-}
-
-/* =========================================
-   8. IMAGE ET FIGURE
+   8. IMAGE ET FIGURE (Générales)
 ========================================= */
 figure {
-    margin: 2rem 0 0 0; /* Supprime les marges par défaut gênantes de la balise figure */
+    margin: 2rem 0 0 0;
 }
 
 img {
@@ -289,9 +262,9 @@ img {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     width: 100%;
-    height: 350px; /* On fixe une hauteur raisonnable */
-    object-fit: cover; /* LA MAGIE : recadre l'image sans la déformer */
-    object-position: center 20%; /* Optionnel: permet de centrer un peu plus vers le haut de l'image (les visages) */
+    height: 350px;
+    object-fit: cover;
+    object-position: center 20%;
     background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
     display: block;
 }
@@ -300,23 +273,216 @@ img:hover {
     transform: scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
+/* =========================================
+   BOUTONS (CTA) - À mettre dans les deux CSS
+========================================= */
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0 2.5rem 0;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+}
+
+.btn-cta:hover {
+    transform: translateY(-4px);
+    background: #ea580c;
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+    color: white;
+}
+
+.btn-secondary {
+    background: #64748b;
+    box-shadow: 0 10px 20px rgba(100, 116, 139, 0.3);
+}
+
+.btn-secondary:hover {
+    background: #475569;
+    box-shadow: 0 15px 30px rgba(100, 116, 139, 0.4);
+}
+/* =========================================
+   10. BOUTIQUE (Aperçu)
+========================================= */
+.boutique-preview-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+}
+
+.products-container {
+    display: grid;
+    /* CSS Grid Magique : 3 colonnes sur PC, 1 sur mobile automatiquement ! */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #06b6d4;
+}
+
+.product-image img {
+    height: 200px; /* Plus petit que l'image principale */
+    border-radius: 15px 15px 0 0; /* Coins arrondis seulement en haut */
+    box-shadow: none;
+}
+
+.product-image img:hover {
+    transform: scale(1); /* Annule l'effet de zoom global sur les cartes produit */
+}
+
+.product-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permet d'étirer la carte si les textes n'ont pas la même taille */
+}
+
+.product-body h4 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e3a8a;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-body p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-top: auto; /* Pousse le prix et le bouton vers le bas */
+    margin-bottom: 1rem;
+}
+
+.btn-product {
+    background: var(--primary-gradient);
+    color: white;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 0.3s ease;
+}
+
+.btn-product:hover {
+    opacity: 0.9;
+    color: white;
+}
 
 /* =========================================
-   11. ÉCRAN DE CHARGEMENT (SPLASH SCREEN)
+   11. SECTION AVIS (Témoignages)
+========================================= */
+.temoignages-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    background-color: var(--card-bg);
+    padding: 1.5em;
+    z-index: 5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    max-width: 320px;
+    transition: 300ms ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #06b6d4;
+}
+
+.username {
+    color: var(--accent-color);
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+}
+
+.body { display: flex; flex-direction: column; }
+.body .text { margin: 0; white-space: pre-line; color: var(--text-main); font-weight: 400; line-height: 1.6; font-style: italic; }
+
+.footer { position: relative; width: 100%; color: var(--text-light); font-size: 12px; display: flex; align-items: center; justify-content: space-between; margin-top: 15px; padding-top: 15px; border-top: 1px solid #f1f5f9; }
+.footer > div { display: flex; }
+.footer div div { margin-right: 1rem; height: 20px; display: flex; align-items: center; cursor: pointer; transition: color 0.2s ease; }
+.footer div div:hover { color: #06b6d4; }
+.footer div div:hover svg { stroke: #06b6d4; }
+.footer svg { margin-right: 5px; height: 100%; stroke: var(--text-light); transition: stroke 0.2s ease; }
+.viewer { display: flex; }
+.viewer span { height: 24px; width: 24px; background-color: #06b6d4; margin-right: -8px; border-radius: 50%; border: 2px solid #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 9px; color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.viewer span svg { stroke: #fff; height: 12px; margin: 0; }
+
+/* =========================================
+   12. PIED DE PAGE (FOOTER)
+========================================= */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-top: 2rem;
+}
+
+/* =========================================
+   13. ÉCRAN DE CHARGEMENT (SPLASH SCREEN)
 ========================================= */
 #splash-screen {
     position: fixed;
-    inset: 0; /* Prend tout l'écran */
+    inset: 0;
     background-color: var(--bg-color);
-    z-index: 9999; /* Toujours au-dessus du reste */
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    /* L'animation qui fait disparaître l'écran après 2.5s */
     animation: fadeOutSplashScreen 0.5s ease-in forwards 2.5s;
-    pointer-events: none; /* Empêche de bloquer les clics une fois caché */
+    pointer-events: none;
 }
 
 .loader-text {
@@ -328,10 +494,7 @@ img:hover {
 }
 
 @keyframes fadeOutSplashScreen {
-    to { 
-        opacity: 0; 
-        visibility: hidden; 
-    }
+    to { opacity: 0; visibility: hidden; }
 }
 
 @keyframes pulseText {
@@ -339,47 +502,11 @@ img:hover {
     50% { opacity: 1; }
 }
 
-/* --- Le code de l'animation Uiverse adapté à tes couleurs --- */
-.loader {
-    scale: 3;
-    height: 50px;
-    width: 40px;
-}
-
-.box {
-    position: relative;
-    opacity: 0;
-    left: 10px;
-}
-
-.side-left {
-    position: absolute;
-    background-color: #1e3a8a; /* Ton bleu profond */
-    width: 19px;
-    height: 5px;
-    transform: skew(0deg, -25deg);
-    top: 14px;
-    left: 10px;
-}
-
-.side-right {
-    position: absolute;
-    background-color: #0284c7; /* Bleu intermédiaire */
-    width: 19px;
-    height: 5px;
-    transform: skew(0deg, 25deg);
-    top: 14px;
-    left: -9px;
-}
-
-.side-top {
-    position: absolute;
-    background-color: #06b6d4; /* Ton Cyan */
-    width: 20px;
-    height: 20px;
-    rotate: 45deg;
-    transform: skew(-20deg, -20deg);
-}
+.loader { scale: 3; height: 50px; width: 40px; }
+.box { position: relative; opacity: 0; left: 10px; }
+.side-left { position: absolute; background-color: #1e3a8a; width: 19px; height: 5px; transform: skew(0deg, -25deg); top: 14px; left: 10px; }
+.side-right { position: absolute; background-color: #0284c7; width: 19px; height: 5px; transform: skew(0deg, 25deg); top: 14px; left: -9px; }
+.side-top { position: absolute; background-color: #06b6d4; width: 20px; height: 20px; rotate: 45deg; transform: skew(-20deg, -20deg); }
 
 .box-1 { animation: from-left 4s infinite; }
 .box-2 { animation: from-right 4s infinite; animation-delay: 1s; }
@@ -404,148 +531,67 @@ img:hover {
     100% { z-index: 5; translate: 0px 30px; opacity: 0; }
 }
 
-
 /* =========================================
-   12. SECTION AVIS (Uiverse Adapté)
+   14. MEDIA QUERIES (RESPONSIVE DESIGN)
 ========================================= */
-.temoignages-section {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid #e2e8f0;
-}
+/* Pour les tablettes et smartphones (écrans de moins de 768px de large) */
+@media screen and (max-width: 768px) {
+    /* On réduit le header pour prendre moins de place */
+    header {
+        padding: 3rem 1rem 2rem;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
 
-.section-titre {
-    font-family: 'Poppins', sans-serif;
-    color: #1e3a8a;
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
+    header h1 {
+        font-size: 2.2rem; /* Titre plus petit */
+    }
 
-/* Flexbox pour aligner les cartes côte à côte sur grand écran */
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
+    /* Le menu de navigation se met en colonne (les uns sous les autres) */
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
 
-/* Le code Uiverse retravaillé avec tes couleurs */
-.card {
-    position: relative;
-    background-color: var(--card-bg); /* Blanc au lieu du gris foncé */
-    padding: 1.5em;
-    z-index: 5;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Ombre plus douce */
-    border: 1px solid #e2e8f0;
-    border-radius: 15px;
-    max-width: 320px;
-    transition: 300ms ease-in-out;
-}
+    /* La boîte principale prend moins de marge et de padding */
+    main {
+        margin-top: -1.5rem;
+        padding: 0 1rem;
+    }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border-color: #06b6d4;
-}
+    article {
+        padding: 1.5rem;
+    }
 
-.username {
-    color: var(--accent-color); /* Ton orange dynamique */
-    font-size: 0.9em;
-    font-weight: 600;
-    margin-top: 10px;
-    display: block;
-}
+    h2, .section-titre {
+        font-size: 1.6rem;
+    }
 
-.body {
-    display: flex;
-    flex-direction: column;
-}
+    /* Les boutons CTA prennent 100% de la largeur sur mobile */
+   .cta-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-.body .text {
-    margin: 0;
-    white-space: pre-line;
-    color: var(--text-main); /* Gris foncé lisible */
-    font-weight: 400;
-    line-height: 1.6;
-    font-style: italic;
-}
+    .btn-cta {
+        width: 100%;
+        margin: 0;
+    }
 
-.footer {
-    position: relative;
-    width: 100%;
-    color: var(--text-light);
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #f1f5f9;
-}
+    /* L'image héroïque prend moins de hauteur */
+    img {
+        height: 250px;
+    }
 
-.footer > div {
-    display: flex;
-}
-
-.footer div div {
-    margin-right: 1rem;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.footer div div:hover {
-    color: #06b6d4; /* Devient cyan au survol */
-}
-
-.footer div div:hover svg {
-    stroke: #06b6d4;
-}
-
-.footer svg {
-    margin-right: 5px;
-    height: 100%;
-    stroke: var(--text-light);
-    transition: stroke 0.2s ease;
-}
-
-.viewer {
-    display: flex;
-}
-
-.viewer span {
-    height: 24px;
-    width: 24px;
-    background-color: #06b6d4; /* Ton Cyan */
-    margin-right: -8px; /* Effet de chevauchement */
-    border-radius: 50%;
-    border: 2px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 9px;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.viewer span svg {
-    stroke: #fff;
-    height: 12px;
-    margin: 0;
-}
-
-/* =========================================
-   9. PIED DE PAGE (FOOTER)
-========================================= */
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-light);
-    font-size: 0.95rem;
-    margin-top: 2rem;
+    /* Le bloc de citation devient un peu plus compact */
+    blockquote {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    blockquote::before {
+        font-size: 3rem;
+        top: -5px;
+        left: 5px;
+    }
 }

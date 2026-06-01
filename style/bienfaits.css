@@ -1,5 +1,5 @@
 /* =========================================
-   1. POLICES ET VARIABLES (Cohérence avec l'accueil)
+   1. VARIABLES ET BASE
 ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap');
 
@@ -12,202 +12,122 @@
     --card-bg: #ffffff;
 }
 
-/* =========================================
-   2. RESET ET BASE
-========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    line-height: 1.7;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Permet de pousser le footer en bas si la page est vide */
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; }
+.sr-only:not(:focus) { clip: rect(0, 0, 0, 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
 
 /* =========================================
-   3. ANIMATIONS
-========================================= */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulseBorder {
-    0% { border-color: rgba(6, 182, 212, 0.3); }
-    50% { border-color: rgba(249, 115, 22, 0.5); }
-    100% { border-color: rgba(6, 182, 212, 0.3); }
-}
-
-/* =========================================
-   4. EN-TÊTE (HEADER) ET NAVIGATION
+   2. EN-TÊTE ET NAVIGATION 
 ========================================= */
 header {
-    background: var(--primary-gradient);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: var(--primary-gradient); color: white; padding: 2rem; text-align: center;
+    border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+header h1 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; margin-bottom: 0.5rem; text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1); }
+header p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; font-weight: 300; }
 
-header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
+nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 nav a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white; text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 1rem;
+    padding: 0.4rem 1.2rem; border-radius: 50px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px);
+    transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.15);
 }
-
-nav a:hover {
-    background: white;
-    color: #1e3a8a;
-    transform: translateY(-2px);
-}
-
-/* Styliser le lien de la page active pour que le prof voie que c'est propre */
-nav ul li:nth-child(2) a {
-    background: white;
-    color: #1e3a8a;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+nav a:hover, nav a[aria-current="page"] { background: white; color: #1e3a8a; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
 
 /* =========================================
-   5. CONTENU PRINCIPAL & DISPOSITION (GRID)
+   3. CONTENU PRINCIPAL & HERO
 ========================================= */
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    flex: 1; /* Occupe l'espace restant pour caler le footer en bas */
-}
+main { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; display: block; flex: 1; }
 
-main h2 {
-    font-family: 'Poppins', sans-serif;
-    color: #1e3a8a;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
+h2, h3 { font-family: 'Poppins', sans-serif; color: #1e3a8a; }
 
-/* Ligne décorative centrée sous le H2 */
-main h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--accent-color);
-    border-radius: 2px;
-}
-
-/* Conteneur des cartes (alignement horizontal automatique) */
-main {
-    display: block; /* Sécurité */
-}
+.hero-bienfaits { text-align: center; margin-bottom: 4rem; }
+.hero-bienfaits h2 { font-size: 2.5rem; margin-bottom: 1.5rem; display: inline-block; position: relative; }
+.hero-bienfaits h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--accent-color); border-radius: 2px; }
+.hero-bienfaits p { font-size: 1.15rem; max-width: 800px; margin: 0 auto; color: var(--text-light); }
 
 /* =========================================
-   6. LES CARTES D'INFORMATION (.carte-info)
+   4. BANDEAU STATISTIQUES
 ========================================= */
-.carte-info {
-    background: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 16px;
-    margin-bottom: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+.stats-banner {
+    display: flex; justify-content: space-around; align-items: center;
+    background: var(--card-bg); padding: 2.5rem 1rem; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); margin-bottom: 5rem; flex-wrap: wrap; gap: 2rem;
     border: 1px solid rgba(226, 232, 240, 0.8);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    animation: fadeIn 0.6s ease-out both;
-    position: relative;
-    overflow: hidden;
 }
-
-/* Animation décalée pour la deuxième carte */
-.carte-info:nth-of-type(2) {
-    animation-delay: 0.2s;
-}
-
-.carte-info h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #1e3a8a;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.carte-info p {
-    font-size: 1.05rem;
-    color: var(--text-main);
-    line-height: 1.8;
-}
-
-/* Effets au survol des cartes */
-.carte-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border-color: #06b6d4;
-}
-
-/* Petite barre colorée sur le côté gauche de chaque carte */
-.carte-info::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 6px;
-    background: var(--primary-gradient);
-}
+.stat-item { text-align: center; }
+.stat-number { display: block; font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 700; color: var(--accent-color); line-height: 1; margin-bottom: 0.5rem; }
+.stat-label { font-size: 1rem; color: var(--text-light); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
 
 /* =========================================
-   7. PIED DE PAGE (FOOTER)
+   5. SECTION ZIGZAG (Mise en page alternée)
 ========================================= */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #ffffff;
-    color: var(--text-light);
-    font-size: 0.95rem;
-    border-top: 1px solid #e2e8f0;
-    margin-top: auto;
-}
+.zigzag-section { margin-bottom: 5rem; }
+.zigzag-row { display: flex; align-items: center; gap: 4rem; margin-bottom: 4rem; }
+.zigzag-row.reverse { flex-direction: row-reverse; }
 
-/* Petit effet fun secret sur ta phrase du footer au survol */
-footer p:hover {
-    color: var(--accent-color);
-    cursor: pointer;
-    transition: color 0.3s ease;
+.zigzag-content { flex: 1; }
+.zigzag-content h3 { font-size: 1.8rem; margin-bottom: 1rem; color: #06b6d4; }
+.zigzag-content p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+.check-list { list-style: none; padding: 0; margin: 0; }
+.check-list li { position: relative; padding-left: 2rem; margin-bottom: 0.8rem; font-weight: 500; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--accent-color); font-weight: bold; font-size: 1.2rem; }
+
+.zigzag-image { flex: 1; }
+.image-placeholder { width: 100%; height: 350px; border-radius: 20px; display: flex; justify-content: center; align-items: center; font-size: 6rem; box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+.image-placeholder:hover { transform: scale(1.02) rotate(-1deg); }
+.gradient-1 { background: linear-gradient(135deg, #f0fdfa, #cffafe); }
+.gradient-2 { background: linear-gradient(135deg, #fff7ed, #ffedd5); }
+
+/* =========================================
+   6. FAQ INTERACTIVE (Accordéon)
+========================================= */
+.faq-section { max-width: 800px; margin: 0 auto 5rem; }
+.faq-section h2 { text-align: center; margin-bottom: 0.5rem; display: block; position: relative; }
+.faq-section h2::after { display: none; }
+.faq-intro { text-align: center; color: var(--text-light); margin-bottom: 2.5rem; }
+
+.faq-container details { background: var(--card-bg); border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; overflow: hidden; }
+.faq-container summary::-webkit-details-marker { display: none; }
+.faq-container summary { padding: 1.5rem; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #1e3a8a; transition: background 0.3s ease; }
+.faq-container summary:hover { background: #f8fafc; }
+.faq-container summary .icon { font-size: 1.5rem; color: var(--accent-color); font-weight: 300; transition: transform 0.3s ease; }
+.faq-container details[open] summary .icon { transform: rotate(45deg); }
+.faq-container details p { padding: 0 1.5rem 1.5rem; margin: 0; color: var(--text-light); border-top: 1px solid #f1f5f9; padding-top: 1rem; }
+
+/* =========================================
+   7. APPEL À L'ACTION & FOOTER
+========================================= */
+.cta-section { text-align: center; background: #ffffff; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border: 1px solid rgba(226, 232, 240, 0.8); }
+.cta-section h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+.cta-group { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.btn-cta { display: inline-block; background: var(--accent-color); color: white; font-family: 'Poppins', sans-serif; font-weight: 600; text-decoration: none; padding: 1rem 2.5rem; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3); }
+.btn-cta:hover { background: #ea580c; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4); color: white; }
+.btn-secondary { background: #64748b; box-shadow: 0 10px 20px rgba(100, 116, 139, 0.3); }
+.btn-secondary:hover { background: #475569; box-shadow: 0 15px 30px rgba(100, 116, 139, 0.4); }
+
+footer { text-align: center; padding: 2rem; background: #ffffff; color: var(--text-light); font-size: 0.95rem; border-top: 1px solid #e2e8f0; margin-top: auto; }
+footer p:hover { color: var(--accent-color); cursor: pointer; transition: color 0.3s ease; }
+
+/* =========================================
+   8. RESPONSIVE (MOBILES ET TABLETTES)
+========================================= */
+@media screen and (max-width: 768px) {
+    header { padding: 1.5rem; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; }
+    header h1 { font-size: 1.8rem; }
+    nav ul { flex-direction: column; gap: 0.5rem; }
+    nav a { display: block; }
+    
+    main { padding: 2rem 1rem; }
+    .hero-bienfaits h2 { font-size: 2rem; }
+    
+    .stats-banner { flex-direction: column; gap: 2rem; }
+    
+    /* Sur mobile, on annule le zigzag pour tout empiler */
+    .zigzag-row, .zigzag-row.reverse { flex-direction: column; gap: 2rem; }
+    .image-placeholder { height: 250px; }
+    
+    .cta-group { flex-direction: column; }
+    .btn-cta { width: 100%; text-align: center; }
 }

@@ -3,85 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerveau Actif | Les Jeux</title>
-    <!-- Le lien vers ton futur fichier CSS -->
+    <title>Cerveau Actif | L'Arène d'Entraînement</title>
+    <meta name="description" content="Testez vos réflexes cognitifs avec nos mini-jeux interactifs en ligne.">
     <link rel="stylesheet" href="style/exercices.css">
 </head>
 <body>
+
+    <a href="#contenu-principal" class="sr-only">Aller au contenu principal</a>
+
     <header>
         <h1>Cerveau Actif</h1>
-        <nav>
+        <p><em>La salle de sport de vos neurones.</em></p>
+        <nav aria-label="Navigation principale">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="bienfaits.html">Les Bienfaits</a></li>
-                <li><a href="exercices.html">Les Jeux</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="exercices.html" aria-current="page">Exercices Interactifs</a></li>
+                <li><a href="boutique.html">La Boutique</a></li>
+                <li><a href="contact.html">S'abonner</a></li>
             </ul>
         </nav>
-        <hr>
     </header>
 
-    <main>
-        <h2>🧠 L'arène d'entraînement</h2>
-        <p>Fini la théorie, place à la pratique ! Clique sur les propositions ci-dessous pour tester tes réflexes.</p>
+    <main id="contenu-principal">
         
-        <section class="quiz-box">
-            <h3>Jeu 1 : Le Sprint Multiplicateur</h3>
-            <p><strong>Calcul rapide : Combien font 8 x 7 ?</strong></p>
+        <section class="hero-intro">
+            <h2>🧠 L'arène d'entraînement</h2>
+            <p>Fini la théorie, place à la pratique ! Choisissez votre défi et cliquez sur les propositions pour tester vos réflexes. Prenez votre temps, l'important n'est pas la vitesse, mais la stimulation de vos connexions neuronales.</p>
+        </section>
+        
+        <div class="games-container">
             
-            <details>
-                <summary>A) 54</summary>
-                <p class="erreur">❌ Aïe, presque ! Ça c'est 6 x 9.</p>
-            </details>
-            
-            <details>
-                <summary>B) 56</summary>
-                <p class="succes">✅ Bingo ! Le cerveau chauffe, continue !</p>
-            </details>
-            
-            <details>
-                <summary>C) 64</summary>
-                <p class="erreur">❌ Oups, un peu trop haut. Ça c'est 8 x 8.</p>
-            </details>
+            <article class="quiz-card">
+                <div class="card-badges">
+                    <span class="badge cat-calcul">Calcul</span>
+                    <span class="badge diff-facile">⭐ Facile</span>
+                </div>
+                
+                <h3>Le Sprint Multiplicateur</h3>
+                <p class="question-text">Combien font <strong>8 x 7</strong> ?</p>
+                
+                <div class="options-group">
+                    <details>
+                        <summary>A) 54</summary>
+                        <p class="feedback erreur">❌ Aïe, presque ! Ça c'est 6 x 9.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>B) 56</summary>
+                        <p class="feedback succes">✅ Bingo ! Le cerveau chauffe, continue !</p>
+                    </details>
+                    
+                    <details>
+                        <summary>C) 64</summary>
+                        <p class="feedback erreur">❌ Oups, un peu trop haut. Ça c'est 8 x 8.</p>
+                    </details>
+                </div>
+            </article>
+
+            <article class="quiz-card">
+                <div class="card-badges">
+                    <span class="badge cat-logique">Logique</span>
+                    <span class="badge diff-moyen">⭐⭐ Moyen</span>
+                </div>
+                
+                <h3>L'Illusion des Pourcentages</h3>
+                <p class="question-text">Qu'est-ce qui est le plus grand ?</p>
+                
+                <div class="options-group">
+                    <details>
+                        <summary>A) 10% de 50</summary>
+                        <p class="feedback erreur">❌ Faux ! 10% de 50 = 5.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>B) 50% de 10</summary>
+                        <p class="feedback erreur">❌ Faux ! 50% de 10 = 5.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>C) C'est exactement pareil !</summary>
+                        <p class="feedback succes">✅ Excellent ! Astuce de pro : X% de Y est toujours égal à Y% de X. C'est souvent plus facile à calculer dans l'autre sens !</p>
+                    </details>
+                </div>
+            </article>
+
+            <article class="quiz-card">
+                <div class="card-badges">
+                    <span class="badge cat-quotidien">Vie Quotidienne</span>
+                    <span class="badge diff-facile">⭐ Facile</span>
+                </div>
+                
+                <h3>La soustraction qui pique</h3>
+                <p class="question-text">Tu as 100€. Tu achètes un jeu à 37€. <strong>Combien te reste-t-il ?</strong></p>
+                
+                <div class="options-group">
+                    <details>
+                        <summary>A) 63€</summary>
+                        <p class="feedback succes">✅ Parfait ! Astuce : Fais 100 - 30 = 70. Puis 70 - 7 = 63.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>B) 73€</summary>
+                        <p class="feedback erreur">❌ Attention à la retenue ! Tu as oublié d'enlever la dizaine.</p>
+                    </details>
+                </div>
+            </article>
+
+        </div>
+
+        <section class="post-game-cta">
+            <h3>Entraînement terminé ! 🎉</h3>
+            <p>Envie de continuer à stimuler votre esprit loin des écrans ?</p>
+            <a href="boutique.html" class="btn-cta">Découvrir nos jeux physiques</a>
         </section>
 
-        <section class="quiz-box">
-            <h3>Jeu 2 : L'Illusion des Pourcentages</h3>
-            <p><strong>Logique : Qu'est-ce qui est le plus grand ?</strong></p>
-            
-            <details>
-                <summary>A) 10% de 50</summary>
-                <p class="erreur">❌ Faux ! 10% de 50 = 5.</p>
-            </details>
-            
-            <details>
-                <summary>B) 50% de 10</summary>
-                <p class="erreur">❌ Faux ! 50% de 10 = 5.</p>
-            </details>
-            
-            <details>
-                <summary>C) C'est exactement pareil !</summary>
-                <p class="succes">✅ Excellent ! Astuce de pro : X% de Y est toujours égal à Y% de X. C'est souvent plus facile à calculer dans l'autre sens !</p>
-            </details>
-        </section>
-
-        <section class="quiz-box">
-            <h3>Jeu 3 : La soustraction qui pique</h3>
-            <p><strong>Tu as 100€. Tu achètes un jeu à 37€. Combien te reste-t-il ?</strong></p>
-            
-            <details>
-                <summary>A) 63€</summary>
-                <p class="succes">✅ Parfait ! Astuce : Fais 100 - 30 = 70. Puis 70 - 7 = 63.</p>
-            </details>
-            
-            <details>
-                <summary>B) 73€</summary>
-                <p class="erreur">❌ Attention à la retenue ! Tu as oublié d'enlever la dizaine.</p>
-            </details>
-        </section>
     </main>
 
-    <hr>
     <footer>
         <p>&copy; 2026 Cerveau Actif - Tes neurones te remercient.</p>
     </footer>
