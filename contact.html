@@ -4,65 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerveau Actif | S'abonner & Contact</title>
-    <!-- Le lien vers ton futur fichier CSS -->
+    <meta name="description" content="Rejoignez la communauté Cerveau Actif, recevez vos défis quotidiens et partagez vos astuces.">
     <link rel="stylesheet" href="style/contact.css">
 </head>
 <body>
+
+    <a href="#contenu-principal" class="sr-only">Aller au contenu principal</a>
+
     <header>
         <h1>Cerveau Actif</h1>
-        <nav>
+        <p><em>Restons en contact.</em></p>
+        <nav aria-label="Navigation principale">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="bienfaits.html">Les Bienfaits</a></li>
-                <li><a href="exercices.html">Les Jeux</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="exercices.html">Exercices Interactifs</a></li>
+                <li><a href="boutique.html">La Boutique</a></li>
+                <li><a href="contact.html" aria-current="page">S'abonner</a></li>
             </ul>
         </nav>
-        <hr>
     </header>
 
-    <main>
-        <h2>Rejoignez la communauté des cerveaux musclés</h2>
-        <p>Inscrivez-vous pour recevoir votre défi quotidien ou partagez avec nous vos meilleures astuces de calcul !</p>
+    <main id="contenu-principal">
         
-        <div class="form-box">
-            <form action="#" method="post">
+        <section class="hero-intro">
+            <h2>Rejoignez la communauté</h2>
+            <p>Inscrivez-vous pour recevoir votre défi cognitif quotidien ou partagez avec nous vos meilleures astuces de calcul ! Promis, pas de spam, juste des neurones en pleine forme.</p>
+        </section>
+        
+        <div class="form-container">
+            <form action="#" method="post" class="contact-form">
                 
                 <div class="form-group">
-                    <label for="prenom">Votre prénom :</label><br>
+                    <label for="prenom">Votre prénom :</label>
                     <input type="text" id="prenom" name="prenom" placeholder="Ex: Marie" required>
                 </div>
-                <br>
 
                 <div class="form-group">
-                    <label for="email">Votre adresse email :</label><br>
+                    <label for="email">Votre adresse email :</label>
                     <input type="email" id="email" name="email" placeholder="marie@exemple.com" required>
                 </div>
-                <br>
 
                 <div class="form-group">
-                    <label for="niveau">Votre niveau actuel en calcul :</label><br>
-                    <select id="niveau" name="niveau">
-                        <option value="debutant">Je compte sur mes doigts 🖐️</option>
-                        <option value="intermediaire">Je me débrouille sans calculatrice 🛒</option>
-                        <option value="expert">Je suis une machine 🤖</option>
-                    </select>
+                    <label for="niveau">Votre niveau actuel en calcul :</label>
+                    <div class="custom-select-wrapper">
+                        <select id="niveau" name="niveau">
+                            <option value="debutant">Je compte sur mes doigts 🖐️</option>
+                            <option value="intermediaire">Je me débrouille sans calculatrice 🛒</option>
+                            <option value="expert">Je suis une machine 🤖</option>
+                        </select>
+                    </div>
                 </div>
-                <br>
 
                 <div class="form-group">
-                    <label for="astuce">Partagez une astuce ou une idée de jeu (optionnel) :</label><br>
+                    <label for="astuce">Partagez une astuce ou une idée de jeu (optionnel) :</label>
                     <textarea id="astuce" name="astuce" rows="4" placeholder="Votre message ici..."></textarea>
                 </div>
-                <br>
 
-                <input type="submit" value="Envoyer ma candidature mentale">
+                <button type="submit" class="btn-submit">Envoyer ma candidature mentale 🚀</button>
             </form>
         </div>
     </main>
 
-    <hr>
     <footer>
+        <a href="documents/Bekono_Sophie_wpb_grille_evaluation.docx" download class="download-link">📄 Grille d'évaluation</a>
         <p>&copy; 2026 Cerveau Actif - Tes neurones te remercient.</p>
     </footer>
 </body>
