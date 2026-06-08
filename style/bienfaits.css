@@ -80,6 +80,54 @@ h2, h3 { font-family: 'Poppins', sans-serif; color: #1e3a8a; text-align: center;
 .gradient-1 { background: linear-gradient(135deg, #f0fdfa, #cffafe); }
 .gradient-2 { background: linear-gradient(135deg, #fff7ed, #ffedd5); }
 
+
+/* =========================================
+   SECTION MULTIMÉDIA
+========================================= */
+.multimedia-section { margin-bottom: 5rem; }
+
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.media-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.media-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #1e3a8a;
+    text-align: left;
+}
+
+video {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.audio-wrapper {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+audio {
+    width: 100%;
+    margin-top: 1rem;
+}
+
 /* =========================================
    6. FAQ INTERACTIVE (Accordéon)
 ========================================= */

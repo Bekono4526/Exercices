@@ -245,13 +245,14 @@ article ul li:nth-child(2)::before { animation-delay: 0.5s; }
 article ul li:nth-child(3)::before { animation-delay: 1s; }
 
 /* =========================================
-   8. IMAGE ET FIGURE (Générales)
+   8. IMAGE, VIDÉO ET FIGURE (Générales)
 ========================================= */
 figure {
     margin: 2rem 0 0 0;
 }
 
-img {
+/* On ajoute "video" ici pour lui donner le même design que l'image */
+img, video {
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -263,7 +264,7 @@ img {
     display: block;
 }
 
-img:hover {
+img:hover, video:hover {
     transform: scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
